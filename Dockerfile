@@ -3,6 +3,7 @@ FROM alpine/git AS git-clone
 RUN mkdir -p /app/src && \
     git clone https://github.com/Limorton/vj4.git /app/src
 
+
 # `stage-node` generates some files
 FROM node:8-stretch AS stage-node
 COPY --from=git-clone /app/src /app/src
