@@ -3,11 +3,11 @@ FROM alpine/git AS git-clone
 RUN mkdir -p /app/src && \
     git clone https://github.com/Limorton/vj4.git /app/src
 
-
 # `stage-node` generates some files
 FROM node:12-buster AS stage-node
 COPY --from=git-clone /app/src /app/src
 WORKDIR /app/src
+
 
 RUN yarn \
     && yarn build:production
