@@ -1,7 +1,7 @@
 # pull repository
 FROM alpine/git AS git-clone
 RUN mkdir -p /app/src && \
-    git clone -b master https://github.com/Limorton/vj4.git /app/src
+    git clone -b limm https://github.com/Limorton/vj4.git /app/src
 
 # `stage-node` generates some files
 FROM node:12-buster AS stage-node
